@@ -14,12 +14,12 @@ class Book extends Component {
                         style={{ 
                             width: 128, 
                             height: 188, 
-                            backgroundImage: 'url("http://books.google.com/books/content?id=yDtCuFHXbAYC&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE72RRiTR6U5OUg3IY_LpHTL2NztVWAuZYNFE8dUuC0VlYabeyegLzpAnDPeWxE6RHi0C2ehrR9Gv20LH2dtjpbcUcs8YnH5VCCAH0Y2ICaKOTvrZTCObQbsfp4UbDqQyGISCZfGN&source=gbs_api")' 
+                            backgroundImage: 'url()' 
                         }}></div>
                         <SortButton/>
                     </div>
-                    <div className="book-title">To Kill a Mockingbird</div>
-                    <div className="book-authors">Harper Lee</div>
+                    <div className="book-title"></div>
+                    <div className="book-authors"></div>
                 </div>
             </li>
         )
