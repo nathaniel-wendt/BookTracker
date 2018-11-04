@@ -10,7 +10,7 @@ class Shelf extends Component {
                     <h2 className="bookshelf-title">Currently Reading</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
-                            <Book />
+                            <Book/>
                         </ol>
                     </div>
                 </div>
@@ -18,7 +18,7 @@ class Shelf extends Component {
                     <h2 className="bookshelf-title">Want to Read</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
-                            <Book />
+                            <Book/>
                         </ol>
                     </div>
                 </div>
@@ -26,7 +26,7 @@ class Shelf extends Component {
                     <h2 className="bookshelf-title">Read</h2>
                     <div className="bookshelf-books">
                         <ol className="books-grid">
-                            <Book />
+                            <Book/>
                         </ol>
                     </div>
                 </div>
