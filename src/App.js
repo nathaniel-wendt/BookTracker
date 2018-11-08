@@ -4,18 +4,28 @@ import Search from './components/Search'
 import BookCase from './components/BookCase'
 import './App.css' 
 
-class BooksApp extends React.Component {
+class BookTracker extends React.Component {
   state = {
-    showSearchPage: false
+    books: []
   }
+
+componentDidMount() {
+  BooksAPI
+    .getAll()
+    .then((books) => {
+      this.setState({ books })
+  })
+}
 
   render() {
     return (
       <div className="app">
-        <BookCase/>    
+        <BookCase
+          books={this.state.books}
+        />    
       </div>
     )
   }
 }
 
-export default BooksApp;
+export default BookTracker;

@@ -1,9 +1,7 @@
 import React, {Component} from 'react'
-import Shelf from './Shelf';
+import Book from './Book';
 
 class BookCase extends Component {
-    state = {}
-
     render() {
         return (            
             <div className="list-books">
@@ -12,7 +10,30 @@ class BookCase extends Component {
                 </div>
                 <div className="list-books-content">
                     <div>
-                        <Shelf />
+                        <div className="bookshelf">
+                            <h2 className="bookshelf-title">Currently Reading</h2>
+                            <div className="bookshelf-books">
+                                <ol className="books-grid">
+                                    <Book/>
+                                </ol>
+                            </div>
+                        </div>
+                        <div className="bookshelf">
+                            <h2 className="bookshelf-title">Want to Read</h2>
+                            <div className="bookshelf-books">
+                                <ol className="books-grid">
+                                    <Book/>
+                                </ol>
+                            </div>
+                        </div>
+                        <div className="bookshelf">
+                            <h2 className="bookshelf-title">Read</h2>
+                            <div className="bookshelf-books">
+                                <ol className="books-grid">
+                                    <Book/>
+                                </ol>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="open-search">
