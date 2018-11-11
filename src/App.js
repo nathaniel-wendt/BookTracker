@@ -10,18 +10,31 @@ class BookTracker extends React.Component {
   }
 
 componentDidMount() {
+  this.refreshBooks();
+}
+
+refreshBooks() {
   BooksAPI
     .getAll()
     .then((books) => {
       this.setState({ books })
-  })
+    })
 }
+
+changeShelf = (book, shelf) => {
+  BooksAPI
+    .update(book, shelf);
+  this.refreshBooks();
+  
+}
+
 
   render() {
     return (
       <div className="app">
         <BookCase
           books={this.state.books}
+          changeShelf={this.changeShelf}
         />    
       </div>
     )

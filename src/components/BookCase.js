@@ -3,6 +3,7 @@ import Book from './Book';
 
 class BookCase extends Component {
     render() {
+        console.log(this.props.books);
         return (            
             <div className="list-books">
                 <div className="list-books-title">
@@ -15,14 +16,16 @@ class BookCase extends Component {
                             <div className="bookshelf-books">
                                 <ol className="books-grid">
                                     {
-                                        this.props.books
-                                            .filter(book => book.shelf === 'currentlyReading')
-                                            .map(book => (
-                                                <li key={book.id}>
-                                                    <Book 
-                                                        book={book}
-                                                    />
-                                                </li>
+                                    this.props.books
+                                        .filter(book => book.shelf === 'currentlyReading')
+                                        .map(book => (
+                                            <li key={book.id}>
+                                                <Book 
+                                                    book={book}
+                                                    changeShelf={this.props.changeShelf}
+                                                    currentShelf="currentlyReading"
+                                                />
+                                            </li>
                                         ))
                                     }
                                 </ol>
@@ -39,6 +42,8 @@ class BookCase extends Component {
                                             <li key={book.id}>
                                                 <Book 
                                                     book={book}
+                                                    changeShelf={this.props.changeShelf}
+                                                    currentShelf="wantToRead"
                                                 />
                                             </li>
                                     ))
@@ -57,6 +62,8 @@ class BookCase extends Component {
                                             <li key={book.id}>
                                                 <Book 
                                                     book={book}
+                                                    changeShelf={this.props.changeShelf}
+                                                    currentShelf="read"
                                                 />
                                             </li>
                                     ))
