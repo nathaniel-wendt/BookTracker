@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import * as BooksAPI from '../BooksAPI'
 import Book from './Book';
+import { Link } from 'react-router-dom'
 
 class Search extends React.Component {
     state = {
@@ -8,14 +9,18 @@ class Search extends React.Component {
         searchedBooks: []
     }
 
+/* Method to update search bar while typing */
     updateSearch = (query) => {
         this.setState({
             query: query
         })
-        this.matchingBooks(query);
+        this.searchResults(query);
     }
 
-    matchingBooks = (query) => {
+/* Method to search BooksAPI, if no match (or error) return empty array, else display matching results;
+    learned by watching Maeva NAP's Study Jam video: www.youtube.com/watch?v=i6L2jLHV9j8 */
+
+    searchResults = (query) => {
         if (query) {
             BooksAPI
             .search(query)
@@ -35,9 +40,11 @@ class Search extends React.Component {
         return (
             <div className="search-books">
                 <div className="search-books-bar">
-                    <a
+                    <Link
+                        to="/"
                         className="close-search"
-                        onClick={() => this.setState({showSearchPage: false})}>Close</a>
+                    
+                    >Close</Link>
                     <div className="search-books-input-wrapper">
                         <input 
                             type="text" 
@@ -50,13 +57,22 @@ class Search extends React.Component {
                 <div className="search-book-results">
                     <ol className="books-grid">
                         {
-                            this.state.searchedBooks.map(searchedBook => (
-                                <li key={searchedBook.id}>
-                                    <Book
-                                        book={searchedBook}
-                                    />
-                                </li>
-                            ))
+                            this.state.searchedBooks.map(searchedBook => {
+                                let shelf = 'none'
+                        
+                                this.props.books.map(book => (
+                                    book.id === searchedBook.id ? shelf = book.shelf : ''
+                                ))
+                                return (
+                                    <li key={searchedBook.id}>
+                                      <Book
+                                      book={searchedBook}
+                                      currentShelf={shelf}
+                                      changeShelf={this.props.changeShelf}
+                                      />
+                                  </li>
+                              )
+                          })
                         }
                     </ol>
                 </div>
