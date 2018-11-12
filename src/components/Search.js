@@ -18,7 +18,7 @@ class Search extends React.Component {
     }
 
 /* Method to search BooksAPI, if no match (or error) return empty array, else display matching results;
-    learned by watching Maeva NAP's Study Jam video: www.youtube.com/watch?v=i6L2jLHV9j8 */
+   learned by watching Maeva NAP's Study Jam video: www.youtube.com/watch?v=i6L2jLHV9j8 */
 
     searchResults = (query) => {
         if (query) {
