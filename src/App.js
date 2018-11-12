@@ -35,7 +35,7 @@ changeShelf = (book, shelf) => {
         <BookCase
           books={this.state.books}
           changeShelf={this.changeShelf}
-        />    
+        />   
       </div>
     )
   }

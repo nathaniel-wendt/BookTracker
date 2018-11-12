@@ -63,7 +63,7 @@ class BookCase extends Component {
                                                 <Book 
                                                     book={book}
                                                     changeShelf={this.props.changeShelf}
-                                                    currentShelf="read"
+                                                    currentShdelf="read"
                                                 />
                                             </li>
                                     ))
