@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import Book from './Book'
 
+/* Filters books in books array, organizing them into shelves according to shelfName;
+   passing on the books, shelfName and changeShelf method to Book.js */
+
 class Shelf extends Component {
     render() {
         return(

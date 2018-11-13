@@ -3,7 +3,7 @@ import * as BooksAPI from '../BooksAPI'
 import Book from './Book';
 import { Link } from 'react-router-dom'
 
-class Search extends React.Component {
+class Search extends Component {
     state = {
         query: '',
         searchedBooks: []

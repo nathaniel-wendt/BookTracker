@@ -3,6 +3,10 @@ import Shelf from './Shelf'
 
 import { Link } from 'react-router-dom'
 
+/* BookCase acts as the homepage, accessing BooksAPI via books array passed on from Apps.js;
+   Refactoring BookCase to incorporate Shelf component was inspired by Doug Brown's video wwww.youtube.com/watch?v=OcL7-7cRpkQ 
+   Passes on books array and changeShelf method to Shelf.js */
+
 class BookCase extends Component {
     render() {
         return(

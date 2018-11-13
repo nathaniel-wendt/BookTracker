@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+/* Formats each book within the books array passed down from App.js */
+
 class Book extends Component {
     render() {
         return (
@@ -9,7 +11,8 @@ class Book extends Component {
                         className="book-cover" 
                         style={{ 
                             width: 128, 
-                            height: 188, 
+                            height: 188,
+                            {/* logical operators added to prevent error when books were missing thumbnail image */} 
                             backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ''}")` 
                         }}>
                     </div>
@@ -29,6 +32,7 @@ class Book extends Component {
                 </div>
                 </div>
                     <div className="book-title">{this.props.book.title}</div>
+                    {/* conditional operator used to improve readability of books with multiple authors and display 'Unknown' for books missing an author */}
                     <div className="book-authors">{this.props.book.authors ? this.props.book.authors && this.props.book.authors.join(', ') : 'Unknown'}</div>
             </div>
         )
