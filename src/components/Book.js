@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 
-/* Formats each book within the books array passed down from App.js */
+/* Formats each book within the books array passed down from App.js 
+   logical operators added to backgroundImage to prevent error when books were missing thumbnail image;
+   conditional operator used to improve readability of books with multiple authors and display 'Unknown' for books missing an author */
 
 class Book extends Component {
     render() {
+        let thumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : ''
+        let authors = this.props.book.authors ? this.props.book.authors && this.props.book.authors.join(', ') : 'Unknown'
+        let title = this.props.book.title
+        
         return (
             <div className="book">
                 <div className="book-top">
@@ -12,8 +18,7 @@ class Book extends Component {
                         style={{ 
                             width: 128, 
                             height: 188,
-                            {/* logical operators added to prevent error when books were missing thumbnail image */} 
-                            backgroundImage: `url("${this.props.book.imageLinks && this.props.book.imageLinks.thumbnail || ''}")` 
+                            backgroundImage: `url("${thumbnail}")`
                         }}>
                     </div>
                 <div className="book-shelf-changer">
@@ -31,9 +36,8 @@ class Book extends Component {
                     </select>
                 </div>
                 </div>
-                    <div className="book-title">{this.props.book.title}</div>
-                    {/* conditional operator used to improve readability of books with multiple authors and display 'Unknown' for books missing an author */}
-                    <div className="book-authors">{this.props.book.authors ? this.props.book.authors && this.props.book.authors.join(', ') : 'Unknown'}</div>
+                    <div className="book-title">{title}</div>
+                    <div className="book-authors">{authors}</div>
             </div>
         )
     }
