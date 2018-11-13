@@ -12,7 +12,8 @@ what shelf (if any) each book is on, as well as the ability to move any book fro
 
 * install all project dependencies with `npm install`
 
-  `$ npm install --save react-router-dom` 
+  `$ npm install --save react-router-dom`
+  `$ npm install --save react-debounce-input` 
     
 * start the development server with `npm start`
 
