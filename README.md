@@ -1,3 +1,5 @@
+# BookTracker - a React Web App to track what you read!
+
 ## Description 
 A web application built in React to track books you're interested in.
 The main page (BookCase.js) contains three shelves for organizing your books, separating the books you are 
