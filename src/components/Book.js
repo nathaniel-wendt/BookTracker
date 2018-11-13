@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 
 /* Formats each book within the books array passed down from App.js 
-   logical operators added to backgroundImage to prevent error when books were missing thumbnail image;
-   conditional operator used to improve readability of books with multiple authors and display 'Unknown' for books missing an author */
+   logical operators added to thumbnail variable to prevent error when books were missing thumbnail image;
+   conditional operator used in authors variable to improve readability of multiple authors and display 'Unknown' for missing author */
 
 class Book extends Component {
     render() {
         let thumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : ''
         let authors = this.props.book.authors ? this.props.book.authors && this.props.book.authors.join(', ') : 'Unknown'
         let title = this.props.book.title
-        
+
         return (
             <div className="book">
                 <div className="book-top">
