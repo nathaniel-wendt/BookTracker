@@ -30,9 +30,10 @@ refreshBooks() {
 /* Allows books to be moved between shelves, updating books array upon change */
 changeShelf = (book, shelf) => {
   BooksAPI
-    .update(book, shelf);
-  this.refreshBooks();
-  
+    .update(book, shelf)
+    .then(() => {
+      this.refreshBooks();
+    })
 }
 /* Route "/" sets BookCase as homepage, "/search" renders the search page;
    both pass on the books array and changeShelf props to child components */
